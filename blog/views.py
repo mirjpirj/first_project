@@ -12,6 +12,7 @@ def post_list_all(request):
     return render(request, 'blog/post_list.html', {'posts': posts})
 
 
+# archived posts
 def post_list_archived(request):
     posts = Post.objects.filter(archived=True).order_by('published_date')
     return render(request, 'blog/post_list.html', {'posts': posts})
